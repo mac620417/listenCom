@@ -1,0 +1,6 @@
+Package: listenCom
+Version: 1.0
+Section: patch
+Maintainer: michael.chen <mac620417@gmail.com>
+Architecture: armhf
+Description: This is listenCom Package
