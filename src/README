@@ -1,1 +1,6 @@
-
+#os:resbin-Debin
+#HW:Pi3B+
+Funtion:listen pi on board Com port per second and write file.txt
+output: /tmp/the_com1.txt
+Version:20210805
+Maintainer:michael.chen<mac620417@gmail.com>
