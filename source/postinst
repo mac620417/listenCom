@@ -1,0 +1,8 @@
+
+#!/bin/bash
+
+sudo chmod 755 /usr/local/bin/listenComSec.sh \
+    /usr/local/bin/listen_ttyAMA0
+
+#postinst是在安裝程式前要先做的動作，這邊我先將listenComSec.sh 及 listen_ttyAMA0的權限設定為755
+#而指令可一路打下去，.sh後 \是等於換行的enter。
