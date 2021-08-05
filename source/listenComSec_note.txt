@@ -1,0 +1,7 @@
+nohupd是背景執行程式指令，有參數可下。可參考 https://www.itread01.com/content/1549166436.html
+2>&1 & 的指令是
+Linux作業系統中有三個常用的流： 
+　　0：標準輸入流 stdin 
+　　1：標準輸出流 stdout 
+　　2：標準錯誤流 stderr 
+一般當我們用 > console.txt，實際是 1>console.txt的省略用法；< console.txt ，實際是 0 < console.txt的省略用法，所以上條命令中>output.log是將輸出寫入到output.log檔案中，2>&1意思是把標準錯誤（2）重定向到標準輸出中（1），即標準輸出以及錯誤輸出都在output.log檔案中，程式執行出現錯誤也不會終止。
