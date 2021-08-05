@@ -1,5 +1,5 @@
 四個檔
-1.Config.ini統一放在 etc/listenComCfg/
+1.Config.ini統一放在 etc/listenComCfg/ <Cfg設定檔統一放在etc下
 1.97m2s-listenComSec 是在X11/Xsession.d/內部(這是走圖介面的啟動)
 2.listenComSec.sh腳本寫在 /usr/local/bin下
 3.listen_ttyAMA0是在 /usr/local/bin下
