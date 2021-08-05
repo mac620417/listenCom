@@ -1,0 +1,7 @@
+Package: listenCom
+Version: 1.0
+Section: patch
+Conflicts: Pi3B+
+Architecture: armhf
+Maintainer: michael.chen<mac620417@gmail.com>
+Description: This is m2s-listenCom-auto-job Package
