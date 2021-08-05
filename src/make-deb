@@ -1,0 +1,60 @@
+#!/bin/bash
+
+set -x
+
+NOW_PATH=`pwd`
+
+packageName='listenCom'
+packageVersion=`cat ${NOW_PATH}/VERSION`
+
+if [ X"${packageVersion}" = X'' ]; then
+    exit 1
+fi
+
+
+changeLog(){
+
+createTime=`LANG=en date -R`
+
+cat <<_EOF_ >${NOW_PATH}/src/DEBIAN/changelog
+${packageName} (${packageVersion}) unstable; urgency=low
+
+  * Version: ${packageVeersion} release
+
+   -- michael.chen <mac620417@gmail.com>  ${createTime}
+
+_EOF_
+
+}
+
+
+createControl(){
+
+cat <<_EOF_ > ${NOW_PATH}/src/DEBIAN/control
+Package: ${packageName}
+Version: ${packageVersion}
+Section: patch
+Maintainer: michael.chen <mac620417@gmail.com>
+Architecture: armhf
+Description: This is ${packageName} Package
+_EOF_
+
+}
+
+
+rm -rf ${NOW_PATH}/build/* &&
+rm -f ${NOW_PATH}/*.deb 2>&1 &&
+changeLog &&
+createControl &&
+mkdir -p ${NOW_PATH}/build/ &&
+chmod 755 ${NOW_PATH}/build &&
+cp -ar ${NOW_PATH}/src/* ${NOW_PATH}/build/
+
+if [ $? -ne 0 ]; then
+    exit 1
+fi
+
+dpkg -b build/ ${packageName}-${packageVersion}_all.deb
+
+
+exit
